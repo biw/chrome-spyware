@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Netflix Button",
+  "description": "Shortcut to Netflix on Chrome!",
+  "version": "1.0",
+  "homepage_url": "https://github.com/719Ben/chrome-spyware",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_title": "Open Netflix!"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["spy.js"]
+    }
+  ]
+}
